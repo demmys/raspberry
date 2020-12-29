@@ -34,23 +34,23 @@ server.post('/', function(req, res) {
     if ('on' in req.body) {
       let ps4 = new Device();
       if (req.body.on === true) {
-        ps4.turnOn();
+        await ps4.turnOn();
       } else {
-        ps4.turnOff();
+        await ps4.turnOff();
       }
       ps4.close();
     }
     if ('currentApplication' in req.body) {
       let ps4 = new Device();
       if (req.body.currentApplication === 'HOME') {
-        ps4.sendKeys(['ps']);
+        await ps4.sendKeys(['ps']);
       } else {
-        ps4.startTitle(req.body.currentApplication);
+        await ps4.startTitle(req.body.currentApplication);
       }
       ps4.close();
     }
     res.send('OK');
-  })().catch((err) => {
+  })().catch(err => {
     res.status(500).send(JSON.stringify(err, null, 2));
   });
 });
