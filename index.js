@@ -51,6 +51,7 @@ server.post('/', function(req, res) {
     }
     res.send('OK');
   })().catch(err => {
+    console.log(err);
     res.status(500).send(JSON.stringify(err, null, 2));
   });
 });
