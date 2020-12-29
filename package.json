@@ -1,0 +1,15 @@
+{
+  "name": "raspberry",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "UNLICENCED",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ps4-waker": "^1.10.1"
+  }
+}
